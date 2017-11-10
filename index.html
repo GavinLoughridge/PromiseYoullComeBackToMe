@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link href="css/styles.css" rel="stylesheet">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+    <section id="codeblocks" class="container codeblocks">
+      <div id="moveUpBlock" class="codeblock move" draggable="true">moveUp()</div>
+      <div id="moveDownBlock" class="codeblock move" draggable="true">moveDown()</div>
+      <div id="moveLeftBlock" class="codeblock move" draggable="true">moveLeft()</div>
+      <div id="moveRightBlock" class="codeblock move" draggable="true">moveRight()</div>
+    </section>
+
+    <section id="solutionContainer" class="container solution">
+    </section>
+    <button id="submitButton" class="btn waves-effect waves-light">Submit</button>
+
+    <section id="map" class="container map">
+    </section>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>

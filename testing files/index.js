@@ -2,34 +2,35 @@
 
 let coordinates = [0,0];
 
-console.log('TRY TO GET TO [1, 1]!');
+  console.log('TRY TO GET TO [1, 1]!');
 
-const blastoff = new Promise((planA, planB) => {
-  console.log('blasting off');
-  ascent();
-  planA();
+const ignition = new Promise((resolve, reject) => {
+    console.log('blasting off');
+  blastoff();
+  resolve();
 });
 
-blastoff.then((input) => {
-  console.log('made it to', coordinates);
-  console.log('trying to go right');
+ignition.then((input) => {
+    console.log('made it to', coordinates);
+    console.log('trying to go right');
   goRight();
-  console.log('landed at', coordinates);
+    console.log('landed at', coordinates);
 }).catch((input) => {
-  console.log('rerouted to', coordinates);
-  console.log('trying to recover');
-  console.log('recovered from:', input);
+    console.log('rerouted to', coordinates);
+    console.log('trying to recover');
+    console.log('recovered from:', input);
   goUp();
-  console.log('landed at', coordinates);
+    console.log('landed at', coordinates);
 }).then((input) => {
   console.log('DID YOU MAKE IT?');
 })
 
-function ascent(input) {
-  console.log('going up from', coordinates);
+function blastoff(input) {
+    console.log('going up from', coordinates);
   const result = Math.random();
+
   if (result > 0.5) {
-    console.log('oh no');
+      console.log('oh no');
     coordinates[0] += 1;
     throw 'blast off fail';
   } else {
@@ -38,49 +39,53 @@ function ascent(input) {
 }
 
 function goUp(input) {
-  console.log('going up');
+    console.log('going up');
   const result = Math.random();
+
   if (result > 0) {
     coordinates[1] += 1;
     return coordinates;
   } else {
-    console.log('oh no');
+      console.log('oh no');
     throw 'forward fail';
   }
 }
 
 function goDown(input) {
-  console.log('going down');
+    console.log('going down');
   const result = Math.random();
+
   if (result > 0) {
     coordinates[1] -= 1;
     return coordinates;
   } else {
-    console.log('oh no');
+      console.log('oh no');
     throw 'back fail';
   }
 }
 
 function goRight(input) {
-  console.log('going right');
+    console.log('going right');
   const result = Math.random();
+
   if (result > 0) {
     coordinates[0] += 1;
     return coordinates;
   } else {
-    console.log('oh no');
+      console.log('oh no');
     throw 'right fail';
   }
 }
 
 function goLeft(input) {
-  console.log('going left');
+    console.log('going left');
   const result = Math.random();
+
   if (result > 0.5) {
     coordinates[0] -= 1;
     return coordinates;
   } else {
-    console.log('oh no');
+      console.log('oh no');
     throw 'left fail';
   }
 }

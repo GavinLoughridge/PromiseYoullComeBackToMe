@@ -1,0 +1,29 @@
+.container {
+  border: 5px solid black;
+  margin: 5px;
+  min-height: 50px;
+}
+
+.codeblock {
+  margin: 2px;
+}
+
+.move {
+  text-align: center;
+  color: white;
+  background-color: blue;
+}
+
+.tile {
+  float: left;
+  background-color: white;
+  border: 1px solid lightgrey;
+}
+
+.goal {
+  background-color: green;
+}
+
+.ship {
+  background-color: black;
+}
