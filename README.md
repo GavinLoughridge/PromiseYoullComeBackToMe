@@ -1,13 +1,13 @@
-PROJECT
+#PROJECT
 
 “Promise You’ll Come Back To Me”
 
-TL;DR
+##TL;DR
 
 A “flexboxfroggy” type game to teach people how to use promises with a story taken from 
 the concept album The Life, Death, And Persistence Of Captain Charles Fort by The Wiggly Tendrills.
 
-ANSWERS TO PROJECT QUESTIONS
+##ANSWERS TO PROJECT QUESTIONS
 
 * What problem does your project solve?
 	its hard to learn how to use promises and online documentation is confusing
@@ -30,7 +30,7 @@ ANSWERS TO PROJECT QUESTIONS
   Maybe it would be cool to embed a chatbot to ask some questions about promises.
 
 
-LONG DESCRIPTION
+##LONG DESCRIPTION
 
 You will play the roll of Charles Fort trying to navigate wormholes in the Sargossa Sector and 
 return to the love of your life Ada Lovelace before she grows old and dies due to the time dilation 
@@ -44,7 +44,7 @@ Control System also controls your life support and if it gets blocked you will d
 flying after wormhole jumps or you will stall and die. You must catch unexpected course changes and 
 correct for them or you will get lost and die.
 
-CONTROLS
+###CONTROLS
 
 Users will have some scratch type building blocks that they can drag and drop to create promises 
 (see attached files for example of simple drag and drop).
@@ -55,7 +55,7 @@ course depending on weather each wormhole jump succeeds or fails (see attached f
 Not sure how I’ll look at the order of these element and determination success or failure, but 
 I’m confident I’ll figure it out.
 
-DISPLAY
+###DISPLAY
 
 Besides the drag and drop tool interface users will have a display of their position in the Sargossa Sector. 
 It will show their starting position, destination, location of wormholes allow the way, and where the wormhole 
