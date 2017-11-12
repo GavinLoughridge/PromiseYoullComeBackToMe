@@ -15,13 +15,15 @@ ignition.then((input) => {
     console.log('trying to go right');
   goRight();
     console.log('landed at', coordinates);
-}).catch((input) => {
-    console.log('rerouted to', coordinates);
-    console.log('trying to recover');
-    console.log('recovered from:', input);
-  goUp();
-    console.log('landed at', coordinates);
-}).then((input) => {
+}).catch(
+//   (input) => {
+//     console.log('rerouted to', coordinates);
+//     console.log('trying to recover');
+//     console.log('recovered from:', input);
+//   goUp();
+//     console.log('landed at', coordinates);
+// }
+).then((input) => {
   console.log('DID YOU MAKE IT?');
 })
 

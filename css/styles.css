@@ -1,7 +1,9 @@
 .container {
+  display: inline-block;
   border: 5px solid black;
   margin: 5px;
   min-height: 50px;
+  max-width: 300px
 }
 
 .codeblock {
@@ -12,18 +14,69 @@
   text-align: center;
   color: white;
   background-color: blue;
+  width: 100px;
+}
+
+.then {
+  color: white;
+  background-color: green;
+  width: 200px;
+}
+
+.catch {
+  color: white;
+  background-color: red;
+  width: 200px;
+}
+
+.function {
+  color: white;
+  background-color: grey;
+  width: 150px;
+}
+
+.promise {
+  text-align: center;
+  color: white;
+  background-color: darkorange;
+  width: 100px;
+}
+
+.methodDropspace {
+  width: 95%;
+  min-height: 20px;
+  margin: 5px auto;
+  background-color: rgba(255,255,255,.3);
+}
+
+.functionDropspace {
+  width: 95%;
+  min-height: 20px;
+  margin: 5px auto;
+  background-color: rgba(255,255,255,.3);
 }
 
 .tile {
   float: left;
-  background-color: white;
+  background-color: black;
   border: 1px solid lightgrey;
 }
 
 .goal {
-  background-color: green;
+  background-color: yellow;
+}
+
+.wormholeOrigin {
+  background-color: blue;
+}
+
+.wormholePass {
+  background-color: lightgreen;
+}
+.wormholeFail {
+  background-color: pink;
 }
 
 .ship {
-  background-color: black;
+  background-color: grey;
 }
