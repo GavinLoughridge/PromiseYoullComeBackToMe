@@ -3,7 +3,7 @@
   border: 5px solid black;
   margin: 5px;
   min-height: 50px;
-  max-width: 300px
+  max-width: 300px;
 }
 
 .codeblock {
@@ -56,27 +56,116 @@
   background-color: rgba(255,255,255,.3);
 }
 
-.tile {
-  float: left;
-  background-color: black;
-  border: 1px solid lightgrey;
+.background-tint {
+  background-color: rgba(200,100,0,.5); // Tint color
+  background-blend-mode: multiply;
 }
 
-.goal {
-  background-color: yellow;
+.tile {
+  float: left;
+  color: white;
+  background-color: black;
+  border: 1px solid darkgrey;
 }
 
 .wormholeOrigin {
-  background-color: blue;
+  position: relative;
+}
+
+.wormholeOrigin::before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(assets/spiral8-blue.gif);
+  background-size: contain;
+  content: '';
+  /*animation: wormholeReverse 40s linear infinite;*/
+}
+
+.goal {
+  position: relative;
+}
+
+.goal::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(assets/moon-yellow.png);
+  background-size: contain;
+  content: '';
+  /*animation: wormholeReverse 10s linear infinite;*/
+}
+
+.start {
+  position: relative;
+  background-image: url(assets/moon-red.png);
+  background-size: contain;
 }
 
 .wormholePass {
-  background-color: lightgreen;
-}
-.wormholeFail {
-  background-color: pink;
+  position: relative;
 }
 
-.ship {
-  background-color: grey;
+.wormholePass::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(assets/spiral8-green.gif);
+  background-size: contain;
+  content: '';
+  /*animation: wormhole 20s linear infinite;*/
+}
+
+.wormholeFail {
+  position: relative;
+}
+
+.wormholeFail::before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(assets/spiral8-red.gif);
+  background-size: contain;
+  content: '';
+  /*animation: wormholeReverse 60s linear infinite;*/
+}
+
+@keyframes wormhole {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+@keyframes wormholeReverse {
+  from {transform: rotate(360deg);}
+  to {transform: rotate(0deg);}
+}
+
+.ship::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  //background-color: grey;
+  background-image: url(assets/favicon.ico);
+  background-size: contain;
+  content: '';
+  z-index: 10;
+}
+
+.mapContainer {
+  position: relative;
+  float: left;
+  width: 300px;
+  height: 300px;
+}
+
+.map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.mapOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }

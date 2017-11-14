@@ -38,12 +38,17 @@
     </section>
     <button id="submitButton" class="btn waves-effect waves-light">Submit</button>
 
-    <section id="map" class="container map">
-    </section>
+    <div id="mapContainer" class="container mapContainer">
+      <section id="map" class="map">
+      </section>
+      <canvas id="mapOverlay" class="mapOverlay" width="50" height="50">
+      </canvas>
+    </div>
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.1/pixi.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
   </body>
 </html>
