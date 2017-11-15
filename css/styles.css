@@ -98,6 +98,16 @@ body {
   font-size: 20px;
 }
 
+@keyframes collapse {
+  from {height: 660px;}
+  to {height: 160px;}
+}
+
+@keyframes expand {
+  from {height: 160px;}
+  to {height: 660px;}
+}
+
 .forTextbox {
   position: absolute;
   //margin-top: 535px;

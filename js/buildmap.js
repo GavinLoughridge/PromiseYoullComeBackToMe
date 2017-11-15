@@ -83,6 +83,10 @@ function populateMap(mapSize) {
 }
 
 function buildLevel(level) {
+  $('#map').empty();
+  if ($('canvas').length === 2) {
+    $('canvas')[1].remove();
+  }
   populateMap(mapSizes[level]);
 
   position = starts[level].slice();

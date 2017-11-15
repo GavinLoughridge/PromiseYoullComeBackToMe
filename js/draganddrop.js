@@ -74,8 +74,6 @@ function drop(event) {
     if ($(target).parent('#thenBlock').length) {
       if (!$(target).siblings().length) {
         $(target).after($(target).clone());
-      } else {
-        $(target).before(',');
       }
     }
     $(target).append($(`#${dataId}`).clone());
@@ -100,7 +98,7 @@ function drop(event) {
 
 function dropRemove(event) {
   if ($(event.target).hasClass('solution')) {
-    $(event.target).append(draggedElement);  
+    $(event.target).append(draggedElement);
   } else if (draggedElement &&
             !$(event.target).parents('#solution').length) {
     draggedElement.remove();

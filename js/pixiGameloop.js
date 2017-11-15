@@ -69,14 +69,12 @@ function warpInAnimation(coordinates) {
 }
 
 function gameLoop() {
-  loopCount += 1;
-  if (loopCount === 3000) {
-    return;
-  }
-  if(nextStep) {
+  if (nextStep) {
     requestAnimationFrame(gameLoop);
     nextStep["animation"](nextStep["destinationPixels"]);
     renderer.render(stage);
+  } else {
+    levelEnd();
   }
 }
 

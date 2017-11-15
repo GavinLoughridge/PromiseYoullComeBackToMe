@@ -25,42 +25,52 @@
       <label class="label forCodeblocks">Controle Modules</label>
       <section class="container codeblocksContiner">
         <div id="codeblocks">
-          <div id="promiseBlock" class="codeblock promise" draggable="true">launch</div>
+          <div id="promiseBlock" class="codeblock promise" draggable="true">
+            launch
+          </div>
+
           <div id="thenBlock" class="codeblock method then" draggable="true">
             .then(
             <div class="methodDropspace"></div>
+            ,
+            <div class="methodDropspace"></div>
             )
           </div>
+
           <div id="catchBlock" class="codeblock method catch" draggable="true">
             .catch(
             <div class="methodDropspace"></div>
             )
           </div>
+
           <div id="functionBlockMoveUp" class="codeblock function" draggable="true">
             function() {
               <div class="functionDropspace">
-                <div id="moveUpBlock" class="codeblock move" draggable="false">moveUp();</div>
+                <div id="moveUpBlock" class="codeblock move" draggable="false">return moveUp();</div>
               </div>
             }
           </div>
+
           <div id="functionBlockMoveDown" class="codeblock function" draggable="true">
             function() {
               <div class="functionDropspace">
-                <div id="moveDownBlock" class="codeblock move" draggable="false">moveDown();</div>
+                <div id="moveDownBlock" class="codeblock move" draggable="false">return moveDown();</div>
               </div>
             }
           </div>
+
           <div id="functionBlockMoveLeft" class="codeblock function" draggable="true">
             function() {
               <div class="functionDropspace">
-                <div id="moveLeftBlock" class="codeblock move" draggable="false">moveLeft();</div>
+                <div id="moveLeftBlock" class="codeblock move" draggable="false">return moveLeft();</div>
               </div>
             }
           </div>
+
           <div id="functionBlockMoveRight" class="codeblock function" draggable="true">
             function() {
               <div class="functionDropspace">
-                <div id="moveRightBlock" class="codeblock move" draggable="false">moveRight();</div>
+                <div id="moveRightBlock" class="codeblock move" draggable="false">return moveRight();</div>
               </div>
             }
           </div>
@@ -89,7 +99,7 @@
 
       <!--Textbox-->
       <label class="label forTextbox">Mission Guidance Terminal</label>
-      <section class="container textboxContainer">
+      <section class="container textboxContainer expanded">
         <div class="textboxOverlayContainer">
             <div class="textboxOverlay"></div>
         </div>

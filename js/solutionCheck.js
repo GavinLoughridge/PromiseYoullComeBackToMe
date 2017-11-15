@@ -32,7 +32,7 @@ const commandTable = {
     executionState["context"] = 'promise';
     executionState["errorsCatchable"] = false;
   },
-  "function() {": () => {
+  "function() { ": () => {
     if (executionState["context"] === 'method' && (executionState["errorsCatchable"] === executionState["error"])) {
       executionState["error"] = false;
       executionState["context"] = 'function';
@@ -49,25 +49,25 @@ const commandTable = {
       executionState["context"] = 'method';
     }
   },
-  "moveUp();": () => {
+  "  return moveUp(); ": () => {
     if (executionState["context"] === 'function') {
       position[1] += 1;
       moveTo();
     }
   },
-  "moveDown();": () => {
+  "  return moveDown(); ": () => {
     if (executionState["context"] === 'function') {
       position[1] -= 1
       moveTo();
     }
   },
-  "moveLeft();": () => {
+  "  return moveLeft(); ": () => {
     if (executionState["context"] === 'function') {
       position[0] -= 1;
       moveTo();
     }
   },
-  "moveRight();": () => {
+  "  return moveRight(); ": () => {
     if (executionState["context"] === 'function') {
       position[0] += 1;
       moveTo();
@@ -82,6 +82,7 @@ function executeCommands() {
     console.log('evaluating command:', command);
     console.log('with state:', executionState);
     if (Object.keys(commandTable).indexOf(command) + 1) {
+      console.log('command found');
       commandTable[command]();
     }
     console.log('path is', path);
@@ -90,9 +91,19 @@ function executeCommands() {
 }
 
 function trySolution() {
+  if (gamestate !== 'playing') {
+    return;
+  }
+  gamestate = 'checkingsolution';
   commandList = solution.innerText.split('\n');
 
   console.log(commandList);
+
+  executionState = {
+    "context": 'none',
+    "error": false,
+    "errorsCatchable": false,
+  };
 
   executeCommands();
 
