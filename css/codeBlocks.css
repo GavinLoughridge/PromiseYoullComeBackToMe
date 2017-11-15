@@ -1,0 +1,47 @@
+.promise {
+  text-align: center;
+  background-color: goldenrod;
+}
+
+.then {
+  background-color: seagreen;
+}
+
+.catch {
+  background-color: firebrick;
+}
+
+.function {
+  background-color: slategrey;
+}
+
+.move {
+  text-align: center;
+  background-color: royalblue;
+}
+
+.methodDropspace {
+  width: 95%;
+  min-height: 50px;
+  margin: 5px auto;
+  background-color: rgba(255,255,255,.3);
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .5), inset -2px -2px 2px rgba(255, 255, 255, .5);
+}
+
+.functionDropspace {
+  width: 95%;
+  min-height: 20px;
+  margin: 5px auto;
+  background-color: rgba(255,255,255,.3);
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .5), inset -2px -2px 2px rgba(255, 255, 255, .5);
+}
+
+.codeblock {
+  width: 100%;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .5), inset -2px -2px 2px rgba(0, 0, 0, .5);
+}

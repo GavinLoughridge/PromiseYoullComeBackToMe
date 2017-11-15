@@ -13,17 +13,18 @@ const ignition = new Promise((resolve, reject) => {
 ignition.then((input) => {
     console.log('made it to', coordinates);
     console.log('trying to go right');
-  goRight();
+  return goRight();
     console.log('landed at', coordinates);
 }).catch(
-//   (input) => {
-//     console.log('rerouted to', coordinates);
-//     console.log('trying to recover');
-//     console.log('recovered from:', input);
-//   goUp();
-//     console.log('landed at', coordinates);
-// }
+  (input) => {
+    console.log('rerouted to', coordinates);
+    console.log('trying to recover');
+    console.log('recovered from:', input);
+  goUp();
+    console.log('landed at', coordinates);
+}
 ).then((input) => {
+  console.log('currently at', coordinates);
   console.log('DID YOU MAKE IT?');
 })
 
@@ -31,7 +32,7 @@ function blastoff(input) {
     console.log('going up from', coordinates);
   const result = Math.random();
 
-  if (result > 0.5) {
+  if (result > 1) {
       console.log('oh no');
     coordinates[0] += 1;
     throw 'blast off fail';
@@ -71,8 +72,15 @@ function goRight(input) {
   const result = Math.random();
 
   if (result > 0) {
-    coordinates[0] += 1;
-    return coordinates;
+    return new Promise((resolve, reject) => {
+        console.log('going right promise');
+
+        setTimeout(function() {
+          console.log('ran timeout');
+          coordinates[0] += 1;
+          resolve();
+        }, 5000);
+    });
   } else {
       console.log('oh no');
     throw 'right fail';

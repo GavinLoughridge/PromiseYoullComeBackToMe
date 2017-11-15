@@ -1,0 +1,49 @@
+.textbox {
+  position: relative;
+  float: left;
+  color: lightgrey;
+  background-color: darkgreen;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+
+div.textbox::-webkit-scrollbar {
+    background-color: darkgreen;
+}
+
+div.textbox::-webkit-scrollbar:horizontal {
+    display: none;
+}
+
+div.textbox::-webkit-scrollbar-thumb {
+  background-color: lightgrey;
+}
+
+.textboxOverlayContainer {
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  overflow: hidden;
+  position: absolute;
+  pointer-events: none;
+}
+
+.textboxOverlay {
+  z-index: 4000;
+  position: relative;
+  width: 100%;
+  height: calc(100% + 3px);
+  background: linear-gradient(#444 50%, #000 50%);
+  background-size: 100% 3px;
+  background-repeat: repeat-y;
+  opacity: .14;
+  box-shadow : inset 0px 0px 1px 1px rgba(0, 0, 0, .8);
+  animation: flicker 1s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes flicker {
+  from {transform: translateY(0px);}
+  to {transform: translateY(-3px);}
+}

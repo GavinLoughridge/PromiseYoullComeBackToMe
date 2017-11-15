@@ -1,0 +1,50 @@
+.tile {
+  float: left;
+  color: white;
+  background-color: black;
+  border: 1px solid darkgrey;
+}
+
+.goal {
+  position: relative;
+  background-image: url(assets/moon-yellow.png);
+  background-size: contain;
+}
+
+.start {
+  position: relative;
+  background-image: url(assets/moon-red.png);
+  background-size: contain;
+}
+
+.ship {
+  background-image: url(assets/favicon.ico), url(assets/moon-red.png);
+  background-size: contain;
+}
+
+.map {
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+}
+
+.mapOverlay {
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+}
+
+.wormholeOrigin {
+  background-image: url(assets/spiral8-blue.gif);
+  background-size: contain;
+}
+
+.wormholePass {
+  background-image: url(assets/spiral8-green.gif);
+  background-size: contain;
+}
+
+.wormholeFail {
+  background-image: url(assets/spiral8-red.gif);
+  background-size: contain;
+}

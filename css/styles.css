@@ -1,171 +1,89 @@
+body {
+  font-family: 'VT323', monospace;
+  font-size: 15px;
+  background-color: #505050;
+}
+
+.application {
+  margin: auto;
+  width: 1200px;
+  height: 720px;
+  border: 1px solid red;
+}
+
 .container {
   display: inline-block;
-  border: 5px solid black;
   margin: 5px;
   min-height: 50px;
-  max-width: 300px;
+  padding: 3px;
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .3), inset -2px -2px 2px rgba(255, 255, 255, .3);
+  border-radius: 3px;
 }
 
-.codeblock {
-  margin: 2px;
-}
-
-.move {
-  text-align: center;
-  color: white;
-  background-color: blue;
-  width: 100px;
-}
-
-.then {
-  color: white;
-  background-color: green;
+.codeblocksContiner {
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 5px;
   width: 200px;
 }
 
-.catch {
-  color: white;
-  background-color: red;
+.solutionContainer {
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 210px;
   width: 200px;
-}
-
-.function {
-  color: white;
-  background-color: grey;
-  width: 150px;
-}
-
-.promise {
-  text-align: center;
-  color: white;
-  background-color: darkorange;
-  width: 100px;
-}
-
-.methodDropspace {
-  width: 95%;
-  min-height: 20px;
-  margin: 5px auto;
-  background-color: rgba(255,255,255,.3);
-}
-
-.functionDropspace {
-  width: 95%;
-  min-height: 20px;
-  margin: 5px auto;
-  background-color: rgba(255,255,255,.3);
-}
-
-.background-tint {
-  background-color: rgba(200,100,0,.5); // Tint color
-  background-blend-mode: multiply;
-}
-
-.tile {
-  float: left;
-  color: white;
-  background-color: black;
-  border: 1px solid darkgrey;
-}
-
-.wormholeOrigin {
-  position: relative;
-}
-
-.wormholeOrigin::before {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-image: url(assets/spiral8-blue.gif);
-  background-size: contain;
-  content: '';
-  /*animation: wormholeReverse 40s linear infinite;*/
-}
-
-.goal {
-  position: relative;
-}
-
-.goal::after {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-image: url(assets/moon-yellow.png);
-  background-size: contain;
-  content: '';
-  /*animation: wormholeReverse 10s linear infinite;*/
-}
-
-.start {
-  position: relative;
-  background-image: url(assets/moon-red.png);
-  background-size: contain;
-}
-
-.wormholePass {
-  position: relative;
-}
-
-.wormholePass::after {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-image: url(assets/spiral8-green.gif);
-  background-size: contain;
-  content: '';
-  /*animation: wormhole 20s linear infinite;*/
-}
-
-.wormholeFail {
-  position: relative;
-}
-
-.wormholeFail::before {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-image: url(assets/spiral8-red.gif);
-  background-size: contain;
-  content: '';
-  /*animation: wormholeReverse 60s linear infinite;*/
-}
-
-@keyframes wormhole {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(360deg);}
-}
-
-@keyframes wormholeReverse {
-  from {transform: rotate(360deg);}
-  to {transform: rotate(0deg);}
-}
-
-.ship::after {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  //background-color: grey;
-  background-image: url(assets/favicon.ico);
-  background-size: contain;
-  content: '';
-  z-index: 10;
+  height: 650px;
 }
 
 .mapContainer {
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 415px;
+  width: 470px;
+  height: 470px;
+}
+
+/*.mapContainer {
   position: relative;
-  float: left;
   width: 300px;
   height: 300px;
+}*/
+
+.viewportContainer {
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 892px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
 }
 
-.map {
+.textboxContainer {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  margin-top: 535px;
+  margin-left: 415px;
+  width: 470px;
+  height: 175px;
 }
 
-.mapOverlay {
+.siphonContainer {
   position: absolute;
+  margin-top: 365px;
+  margin-left: 892px;
+  width: 300px;
+  height: 345px;
+}
+
+.siphonOverlay {
+  z-index: 4000;
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: calc(100% + 3px);
+  background: linear-gradient(#444 50%, #000 50%);
+  background-size: 100% 3px;
+  background-repeat: repeat-y;
+  opacity: .14;
+  box-shadow : inset 0px 0px 1px 1px rgba(0, 0, 0, .8);
+  animation: flicker 1s linear infinite;
+  pointer-events: none;
 }
