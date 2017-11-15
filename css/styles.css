@@ -7,8 +7,8 @@ body {
 .application {
   margin: auto;
   width: 1200px;
-  height: 720px;
-  border: 1px solid red;
+  height: 730px;
+  //border: 1px solid red;
 }
 
 .container {
@@ -20,11 +20,26 @@ body {
   border-radius: 3px;
 }
 
+.label {
+  color: #252525;
+  font-family: monospace;
+  background: linear-gradient(to right, #a0a0a0 0%, #dbdbdb 20%, #a0a0a0 100%);
+  border-radius: 3px;
+  padding: 0 3px;
+}
+
 .codeblocksContiner {
   position: absolute;
   margin-top: 60px;
   margin-left: 5px;
   width: 200px;
+  height: 660px;
+}
+
+.forCodeblocks {
+  position: absolute;
+  margin-top: 38px;
+  margin-left: 8px;
 }
 
 .solutionContainer {
@@ -32,22 +47,30 @@ body {
   margin-top: 60px;
   margin-left: 210px;
   width: 200px;
-  height: 650px;
+  height: 660px;
+}
+
+.forSolution {
+  position: absolute;
+  margin-top: 38px;
+  margin-left: 213px;
 }
 
 .mapContainer {
   position: absolute;
-  margin-top: 60px;
+  //margin-top: 60px;
+  margin-top: 250px;
   margin-left: 415px;
   width: 470px;
   height: 470px;
 }
 
-/*.mapContainer {
-  position: relative;
-  width: 300px;
-  height: 300px;
-}*/
+.forMap {
+  position: absolute;
+  //margin-top: 35px;
+  margin-top: 228px;
+  margin-left: 418px;
+}
 
 .viewportContainer {
   position: absolute;
@@ -58,20 +81,42 @@ body {
   border-radius: 50%;
 }
 
+.forViewport {
+  position: absolute;
+  margin-top: 38px;
+  margin-left: 895px;
+}
+
 .textboxContainer {
   position: absolute;
-  margin-top: 535px;
+  //margin-top: 560px;
+  background-color: #505050;
+  margin-top: 60px;
   margin-left: 415px;
   width: 470px;
-  height: 175px;
+  height: 660px;
+  font-size: 20px;
+}
+
+.forTextbox {
+  position: absolute;
+  //margin-top: 535px;
+  margin-top: 38px;
+  margin-left: 418px;
 }
 
 .siphonContainer {
   position: absolute;
-  margin-top: 365px;
+  margin-top: 385px;
   margin-left: 892px;
   width: 300px;
-  height: 345px;
+  height: 335px;
+}
+
+.forSiphon {
+  position: absolute;
+  margin-top: 363px;
+  margin-left: 895px;
 }
 
 .siphonOverlay {

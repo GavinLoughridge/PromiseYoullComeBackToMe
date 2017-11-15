@@ -19,22 +19,17 @@ function allowDropRemove(event) {
 }
 
 function drag(event) {
-  console.log('parent method', $(event.target).parent().hasClass('methodDropspace'));
-  console.log('parent solution', $(event.target).parent().hasClass('solution'));
-  console.log('parent codeblocks', $(event.target).parent().prop('id') === 'codeblocks');
-  console.log('is codeblock', $(event.target).hasClass('codeblock'));
   if ($(event.target).hasClass('codeblock') &&
       ($(event.target).parent().prop('id') === 'codeblocks' ||
       $(event.target).parent().hasClass('methodDropspace'))) {
-    console.log('set data');
     event.dataTransfer.setData("element", event.target.id);
-    console.log('to', draggedData);
   }
 }
 
 function dragRemove(event) {
   if ($(event.target).hasClass('codeblock') &&
-      !$(event.target).hasClass('promise') &&
+      (!$(event.target).hasClass('promise') ||
+      $('#solution').children().length === 1) &&
       ($(event.target).parent().hasClass('solution') ||
       $(event.target).parent().hasClass('methodDropspace'))) {
     draggedElement = event.target;
@@ -46,13 +41,12 @@ function drop(event) {
   const dataId = event.dataTransfer.getData("element");
   const target = event.target;
 
-  console.log('dropped', dataId, 'onto', target);
   // return if no data is being dragged
   if (!dataId) {
     return;
   }
 
-  if (solution.scrollTop === solution.scrollHeight - 580) {
+  if (solution.scrollTop === solution.scrollHeight - 589) {
     changeScrollPosition = true;
   }
 
@@ -106,8 +100,9 @@ function drop(event) {
 
 function dropRemove(event) {
   if ($(event.target).hasClass('solution')) {
-    $(event.target).append(draggedElement);
-  } else if (draggedElement) {
+    $(event.target).append(draggedElement);  
+  } else if (draggedElement &&
+            !$(event.target).parents('#solution').length) {
     draggedElement.remove();
     draggedElement = false;
   }
