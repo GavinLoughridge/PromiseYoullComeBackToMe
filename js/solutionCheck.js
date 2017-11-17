@@ -32,7 +32,7 @@ const commandTable = {
     executionState["context"] = 'promise';
     executionState["errorsCatchable"] = false;
   },
-  "function() { ": () => {
+  "function() {": () => {
     if (executionState["context"] === 'method' && (executionState["errorsCatchable"] === executionState["error"])) {
       executionState["error"] = false;
       executionState["context"] = 'function';
@@ -49,25 +49,25 @@ const commandTable = {
       executionState["context"] = 'method';
     }
   },
-  "  return moveUp(); ": () => {
+  "return moveUp();": () => {
     if (executionState["context"] === 'function') {
       position[1] += 1;
       moveTo();
     }
   },
-  "  return moveDown(); ": () => {
+  "return moveDown();": () => {
     if (executionState["context"] === 'function') {
       position[1] -= 1
       moveTo();
     }
   },
-  "  return moveLeft(); ": () => {
+  "return moveLeft();": () => {
     if (executionState["context"] === 'function') {
       position[0] -= 1;
       moveTo();
     }
   },
-  "  return moveRight(); ": () => {
+  "return moveRight();": () => {
     if (executionState["context"] === 'function') {
       position[0] += 1;
       moveTo();

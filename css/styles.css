@@ -2,12 +2,32 @@ body {
   font-family: 'VT323', monospace;
   font-size: 15px;
   background-color: #505050;
+  background: linear-gradient(to right, #505050 0%, #909090 20%, #505050 100%);
+}
+
+.landing {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background: #909090;
+  z-index: 200;
+  background-size: cover;
+}
+
+.landing div {
+  color: white;
+  text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
 }
 
 .application {
   margin: auto;
   width: 1200px;
-  height: 730px;
+  //height: 730px;
+  height: 100vh;
   //border: 1px solid red;
 }
 
@@ -24,6 +44,7 @@ body {
   color: #252525;
   font-family: monospace;
   background: linear-gradient(to right, #a0a0a0 0%, #dbdbdb 20%, #a0a0a0 100%);
+  border: 1px solid #858585;
   border-radius: 3px;
   padding: 0 3px;
 }
@@ -130,7 +151,7 @@ body {
 }
 
 .siphonOverlay {
-  z-index: 4000;
+  z-index: 100;
   position: relative;
   width: 100%;
   height: calc(100% + 3px);

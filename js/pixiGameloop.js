@@ -4,32 +4,32 @@ let ship;
 let loopCount = 0;
 function moveAnimation(coordinates) {
   if (ship.x > coordinates[0]) {
-    if (ship.x - coordinates[0] < 1) {
+    if (ship.x - coordinates[0] < 5) {
       ship.x = coordinates[0];
       nextStep = path.shift();
     } else {
-      ship.x -= 1;
+      ship.x -= 5;
     }
   } else if (ship.x < coordinates[0]) {
-    if (coordinates[0] - ship.x < 1) {
+    if (coordinates[0] - ship.x < 5) {
       ship.x = coordinates[0];
       nextStep = path.shift();
     } else {
-      ship.x += 1;
+      ship.x += 5;
     }
   } else if (ship.y > coordinates[1]) {
-    if (ship.y - coordinates[1] < 1) {
+    if (ship.y - coordinates[1] < 5) {
       ship.y = coordinates[1];
       nextStep = path.shift();
     } else {
-      ship.y -= 1;
+      ship.y -= 5;
     }
   } else if (ship.y < coordinates[1]) {
-    if (coordinates[1] - ship.y < 1) {
+    if (coordinates[1] - ship.y < 5) {
       ship.y = coordinates[1];
       nextStep = path.shift();
     } else {
-      ship.y += 1;
+      ship.y += 5;
     }
   } else {
     ship.x = coordinates[0];

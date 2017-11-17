@@ -7,12 +7,14 @@ function appendToTextbox(string, resolve) {
     textbox.innerHTML += string.charAt(0);
   }
 
-  textbox.scrollTop = textbox.scrollHeight;
+  if (textbox.scrollHeight - textbox.scrollTop < 690) {
+    textbox.scrollTop = textbox.scrollHeight;
+  }
 
   if (string.length > 1) {
     setTimeout(function() {
       appendToTextbox(string.substring(1), resolve);
-    }, 20)
+    }, 10)
   } else {
     resolve();
   }
@@ -21,23 +23,23 @@ function appendToTextbox(string, resolve) {
 function changeTextboxHeight(targetHeight, resolve) {
   console.log();
   if ($('.textboxContainer:first').height() + 6 > targetHeight) {
-    if ($('.textboxContainer:first').css('height') + 6 - targetHeight < 1) {
+    if ($('.textboxContainer:first').css('height') + 6 - targetHeight < 10) {
       $('.textboxContainer:first').height(targetHeight - 6);
     } else {
-      $('.textboxContainer:first').height(($('.textboxContainer:first').height()) - 1);
+      $('.textboxContainer:first').height(($('.textboxContainer:first').height()) - 5);
       setTimeout(function() {
         changeTextboxHeight(targetHeight, resolve);
-      }, 5);
+      }, 10);
     }
   }
   if ($('.textboxContainer:first').height() + 6 < targetHeight) {
-    if (targetHeight - $('.textboxContainer:first').css('height') - 6 < 1) {
+    if (targetHeight - $('.textboxContainer:first').css('height') - 6 < 10) {
       $('.textboxContainer:first').height(targetHeight - 6);
     } else {
-      $('.textboxContainer:first').height(($('.textboxContainer:first').height()) + 1);
+      $('.textboxContainer:first').height(($('.textboxContainer:first').height()) + 5);
       setTimeout(function() {
         changeTextboxHeight(targetHeight, resolve);
-      }, 5);
+      }, 30);
     }
   }
   if($('.textboxContainer:first').height() + 6 === targetHeight && resolve) {
@@ -45,6 +47,8 @@ function changeTextboxHeight(targetHeight, resolve) {
   }
   textbox.scrollTop = textbox.scrollHeight;
 }
+
+//solution.scrollTop === solution.scrollHeight - 589
 
 function revealLevel() {
   console.log('switching state');

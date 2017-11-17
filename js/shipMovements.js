@@ -35,7 +35,7 @@ function enterWormhole() {
     }
   );
 
-  if (Math.random() > .5) {
+  if (Math.random() > .5 || !(wormhole.hasOwnProperty("fail"))) {
     position = wormhole["pass"];
     path.push(
       {
@@ -70,7 +70,7 @@ function checkPosition() {
     commandList = [];
     console.log('won');
     console.log('path is', path);
-  } else {
+  } else if (!$(`#x${position[0]}y${position[1]}`).hasClass('safe')){
     won = false
     commandList = [];
     console.log('lost');

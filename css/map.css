@@ -2,6 +2,7 @@
   float: left;
   color: white;
   background-color: black;
+  background-size: cover;
   border: 1px solid darkgrey;
 }
 
