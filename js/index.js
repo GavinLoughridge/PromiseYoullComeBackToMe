@@ -51,15 +51,15 @@ function enterUserInput() {
     case "start":
       if (gamestate === 'instructions') {
         buildLevel(level);
+        appendToTextbox("##STARTING MISSION##>");
         revealLevel();
-        gamestate = 'playing';
       };
       if (gamestate === 'lost') {
         buildLevel(level);
         let lostReversalText = "##Causality reversed##";
         appendToTextbox(lostReversalText);
-        gamestate = 'playing';
       };
+      gamestate = 'playing';
       break;
     case "help":
       appendToTextbox(helpInfo);
@@ -74,7 +74,7 @@ function enterUserInput() {
       appendToTextbox(promiseInfo[level]);
       break;
     default:
-      appendToTextbox("##UNRECOGNIZED COMMAND##");
+      appendToTextbox("##UNRECOGNIZED COMMAND##>");
   }
   userInputString = '';
 }
@@ -82,8 +82,11 @@ function enterUserInput() {
 function userInput(event) {
   if (event.which === 13) {
     enterUserInput();
-  } else if ((event.which > 64 && event.which < 91) || event.which === 32) {
+  } else if ((event.which > 64 && event.which < 91)) {
     textbox.innerHTML += String.fromCharCode(event.which + 32);
     userInputString += String.fromCharCode(event.which + 32);
+  } else if (event.which === 32) {
+    textbox.innerHTML += String.fromCharCode(32);
+    userInputString += String.fromCharCode(32);
   }
 }
