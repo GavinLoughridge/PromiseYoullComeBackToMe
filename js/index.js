@@ -3,6 +3,7 @@ let gamestate = 'instructions';
 
 function enterGame() {
   $(window).off('keydown', enterGame);
+  $(window).on('keydown', userInput);
   console.log('entering game');
   $('#landing').css('display', 'none');
   startLevel(level);
@@ -40,14 +41,49 @@ function setLandingPagePhoto() {
 setLandingPagePhoto();
 $(window).on('keydown', enterGame);
 
-function levelCheat(event) {
-  console.log(event.which);
-  if (event.which > 47 && event.which < 58) {
-    startLevel(event.which - 48);
+updateViewport();
+
+let userInputString = '';
+
+function enterUserInput() {
+  console.log(userInputString);
+  switch (userInputString) {
+    case "start":
+      if (gamestate === 'instructions') {
+        buildLevel(level);
+        revealLevel();
+        gamestate = 'playing';
+      };
+      if (gamestate === 'lost') {
+        buildLevel(level);
+        let lostReversalText = "##Causality reversed##";
+        appendToTextbox(lostReversalText);
+        gamestate = 'playing';
+      };
+      break;
+    case "help":
+      appendToTextbox(helpInfo);
+      break;
+    case "mission":
+      appendToTextbox(missionInfo[level]);
+      break;
+    case "controls":
+      appendToTextbox(controlInfo[level]);
+      break;
+    case "pep":
+      appendToTextbox(promiseInfo[level]);
+      break;
+    default:
+      appendToTextbox("##UNRECOGNIZED COMMAND##");
   }
+  userInputString = '';
 }
 
-$(window).on('keydown', levelCheat);
-
-
-//updateViewport();
+function userInput(event) {
+  if (event.which === 13) {
+    enterUserInput();
+  } else if ((event.which > 64 && event.which < 91) || event.which === 32) {
+    textbox.innerHTML += String.fromCharCode(event.which + 32);
+    userInputString += String.fromCharCode(event.which + 32);
+  }
+}

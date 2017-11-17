@@ -16,7 +16,9 @@ function appendToTextbox(string, resolve) {
       appendToTextbox(string.substring(1), resolve);
     }, 10)
   } else {
-    resolve();
+    if (typeof resolve === 'function') {
+      resolve();
+    }
   }
 }
 
@@ -57,25 +59,23 @@ function revealLevel() {
   //$('.textboxContainer:first').css('height', '160');
 }
 
-function checkForStart(event) {
-  console.log('check start heard', event.which);
-  if (event.which === 83) {
-    $(window).off('keydown', checkForStart);
-    if (gamestate === 'instructions') {
-      buildLevel(level);
-      revealLevel();
-    }
-    if (gamestate === 'lost') {
-      buildLevel(level);
-      let test1 = "##test";
-      function test2() {
-        return;
-      }
-      appendToTextbox(test1, test2);
-    }
-    gamestate = 'playing';
-  }
-}
+// function checkForStart(event) {
+//   console.log('check start heard', event.which);
+//   if (event.which === 83) {
+//     $(window).off('keydown', checkForStart);
+//     if (gamestate === 'instructions') {
+//       buildLevel(level);
+//       revealLevel();
+//       gamestate = 'playing';
+//     }
+//     if (gamestate === 'lost') {
+//       buildLevel(level);
+//       let lostReversalText = "##Causality reversed##";
+//       appendToTextbox(lostReversalText);
+//       gamestate = 'playing';
+//     }
+//   }
+// }
 
 function giveInstructions(text) {
   let myPromise = new Promise((resolve, reject) => {
@@ -84,7 +84,7 @@ function giveInstructions(text) {
 
   myPromise.then(function() {
     console.log('listening for key');
-    $(window).on('keydown', checkForStart);
+    //$(window).on('keydown', checkForStart);
   });
 }
 
