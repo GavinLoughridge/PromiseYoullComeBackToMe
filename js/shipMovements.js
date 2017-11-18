@@ -7,7 +7,6 @@ let nextStep;
 let won;
 
 function moveTo() {
-  console.log('moving to', position);
   path.push({
     "animation": (x) => {
       moveAnimation(x);
@@ -15,14 +14,6 @@ function moveTo() {
     "destinationGrid": [position[0], position[1]],
     "destinationPixels": [pixelCoordinates("x", position[0]), pixelCoordinates("y", position[1])]
   });
-  console.log('pushing', {
-    "animation": (x) => {
-      moveAnimation(x);
-    },
-    "destinationGrid": [position[0], position[1]],
-    "destinationPixels": [pixelCoordinates("x", position[0]), pixelCoordinates("y", position[1])]
-  });
-  console.log('path is', path);
   checkPosition(position);
 }
 
@@ -68,12 +59,8 @@ function checkPosition() {
   } else if ($(`#x${position[0]}y${position[1]}`).hasClass('goal')) {
     won = true;
     commandList = [];
-    console.log('won');
-    console.log('path is', path);
   } else if (!$(`#x${position[0]}y${position[1]}`).hasClass('safe')){
     won = false
     commandList = [];
-    console.log('lost');
-    console.log('path is', path);
   }
 }

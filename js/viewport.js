@@ -21,15 +21,12 @@ function getViewportPhotos() {
 
   var $xhr = $.getJSON(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&api_key=8ZXHhuX7oxCjmUKVYTWXo7EmyckGB7X27dVstz8x`);
 
-  console.log('calling api, vars are', rover, sol);
-
   $xhr.then(function(data) {
     if ($xhr.status !== 200) {
       if ($xhr.status === 304) {
         throw `no images found`;
       }
 
-      console.log('failure count', failuresAPI);
       failuresAPI += 1;
       return;
     }
@@ -48,10 +45,7 @@ function getViewportPhotos() {
 }
 
 function updateViewport() {
-  console.log('called update');
-  console.log('image list is', viewportImages);
   if (viewportImages.length < 2) {
-    console.log('called get', viewportImages.length);
     getViewportPhotos();
   }
 
@@ -59,12 +53,9 @@ function updateViewport() {
     let index = Math.floor(Math.random() * viewportImages.length);
     viewportImage = viewportImages.splice(index, 1);
 
-    console.log('settign to index', index);
-
     viewport.style.backgroundImage = `url(${viewportImage})`;
   }
 
-  console.log('setting timeout');
   setTimeout(function() {
     updateViewport();
   }, 10000);

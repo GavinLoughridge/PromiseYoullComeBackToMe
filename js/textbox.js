@@ -7,14 +7,17 @@ function appendToTextbox(string, resolve) {
     textbox.innerHTML += string.charAt(0);
   }
 
-  if (textbox.scrollHeight - textbox.scrollTop < 690) {
+  console.log(textbox.scrollHeight - textbox.scrollTop);
+  console.log(parseInt($('#textbox').css('height').slice(0, -1)));
+
+  if (textbox.scrollHeight - textbox.scrollTop < parseInt($('#textbox').css('height').slice(0, -1)) + 35) {
     textbox.scrollTop = textbox.scrollHeight;
   }
 
   if (string.length > 1) {
     setTimeout(function() {
       appendToTextbox(string.substring(1), resolve);
-    }, 10)
+    }, 30)
   } else {
     if (typeof resolve === 'function') {
       resolve();
@@ -23,7 +26,6 @@ function appendToTextbox(string, resolve) {
 }
 
 function changeTextboxHeight(targetHeight, resolve) {
-  console.log();
   if ($('.textboxContainer:first').height() + 6 > targetHeight) {
     if ($('.textboxContainer:first').css('height') + 6 - targetHeight < 10) {
       $('.textboxContainer:first').height(targetHeight - 6);
@@ -50,32 +52,9 @@ function changeTextboxHeight(targetHeight, resolve) {
   textbox.scrollTop = textbox.scrollHeight;
 }
 
-//solution.scrollTop === solution.scrollHeight - 589
-
 function revealLevel() {
-  console.log('switching state');
   changeTextboxHeight(160);
-  //$('.textboxContainer:first').css('animation', 'collapse 5s linear');
-  //$('.textboxContainer:first').css('height', '160');
 }
-
-// function checkForStart(event) {
-//   console.log('check start heard', event.which);
-//   if (event.which === 83) {
-//     $(window).off('keydown', checkForStart);
-//     if (gamestate === 'instructions') {
-//       buildLevel(level);
-//       revealLevel();
-//       gamestate = 'playing';
-//     }
-//     if (gamestate === 'lost') {
-//       buildLevel(level);
-//       let lostReversalText = "##Causality reversed##";
-//       appendToTextbox(lostReversalText);
-//       gamestate = 'playing';
-//     }
-//   }
-// }
 
 function giveInstructions(text) {
   let myPromise = new Promise((resolve, reject) => {
@@ -83,8 +62,8 @@ function giveInstructions(text) {
   });
 
   myPromise.then(function() {
-    console.log('listening for key');
-    //$(window).on('keydown', checkForStart);
+    // should add smething to prevent typing while text is being displayed
+    // or else should not run this as a promise
   });
 }
 

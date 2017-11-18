@@ -4,7 +4,6 @@ let gamestate = 'instructions';
 function enterGame() {
   $(window).off('keydown', enterGame);
   $(window).on('keydown', userInput);
-  console.log('entering game');
   $('#landing').css('display', 'none');
   startLevel(level);
 }
@@ -22,18 +21,15 @@ function setLandingPagePhoto() {
   }
   let date = year.concat('-').concat(month).concat('-').concat(day);
 
-  console.log('YMDD', year, month, day, date);
 
   //date=${date}&
 
   var $xhr = $.getJSON(`https://api.nasa.gov/planetary/apod?api_key=8ZXHhuX7oxCjmUKVYTWXo7EmyckGB7X27dVstz8x`);
 
-  console.log('asking for landing picture');
   $xhr.then(function(data) {
     if ($xhr.status !== 200) {
       return;
     }
-    console.log('setting landing picture');
     landing.style.backgroundImage = `url(${data.url})`;
   });
 }
@@ -46,7 +42,6 @@ updateViewport();
 let userInputString = '';
 
 function enterUserInput() {
-  console.log(userInputString);
   switch (userInputString) {
     case "start":
       if (gamestate === 'instructions') {

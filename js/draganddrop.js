@@ -113,4 +113,4 @@ solution.addEventListener('dragover', allowDrop);
 solution.addEventListener('dragstart', dragRemove);
 window.addEventListener('dragover', allowDropRemove);
 window.addEventListener('drop', dropRemove);
-$('#clearButton').click(function() {$('#solution').empty();});
+$('#clearButton').mousedown(function() {$('#solution').empty();});
