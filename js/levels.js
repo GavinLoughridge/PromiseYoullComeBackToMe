@@ -85,7 +85,7 @@ let controlInfo = [
 ];
 
 let instructions = [
-  "- Good morning Captain Fort. Do not be alarmed if you feel disoriented, this is normal when coming out of cryosleep.#- I am your speech enabled emergency guidance system.#- I will do my best to explain everything due to your permanent and irreparably damaged memory.#- Use the CONTROL MODULES to the left to create a PROMISE ENGINE PATH (P.E.P) that will get our satellite to the next planet on the SUBSECTOR MAP.##ENTER 'START' TO DISPLAY THE SUBSECTOR MAP#TYPE 'HELP' TO SHOW OTHER AVAILABLE COMMANDS#>",
+  "- Good morning Captain Fort. Do not be alarmed if you feel disoriented, this is normal when coming out of cryosleep.#- I am your emergency guidance system.#- I will do my best to explain everything due to your permanent and irreparably damaged memory.#- Use the CONTROL MODULES to the left to create a PROMISE ENGINE PATH (P.E.P) that will get our satellite to the next planet on the SUBSECTOR MAP.##ENTER 'START' TO DISPLAY THE SUBSECTOR MAP#TYPE 'HELP' TO SHOW OTHER AVAILABLE COMMANDS#>",
 
   "- Congratulations on not dying alone in space yet! Now use the wormhole to travel to the next planet WITHOUT LANDING ON ANY OF THE CLOUDY SQUARES.#- Good luck!##ENTER 'START' TO DISPLAY THE SUBSECTOR MAP#TYPE 'HELP' TO SHOW OTHER AVAILABLE COMMANDS#>",
 
