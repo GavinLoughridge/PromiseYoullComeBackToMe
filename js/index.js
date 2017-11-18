@@ -43,12 +43,12 @@ function enterUserInput() {
     case "start":
       if (gamestate === 'instructions') {
         buildLevel(level);
-        appendToTextbox("##STARTING MISSION##>");
+        appendToTextbox("#*STARTING MISSION#>");
         revealLevel();
       };
       if (gamestate === 'lost') {
         buildLevel(level);
-        let lostReversalText = "##Causality reversed##";
+        let lostReversalText = "#*Causality reversed#>";
         appendToTextbox(lostReversalText);
       };
       gamestate = 'playing';
@@ -66,7 +66,7 @@ function enterUserInput() {
       appendToTextbox(promiseInfo[level]);
       break;
     default:
-      appendToTextbox("##UNRECOGNIZED COMMAND##>");
+      appendToTextbox("#*UNRECOGNIZED COMMAND#>");
   }
   userInputString = '';
 }
