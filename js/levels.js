@@ -85,13 +85,13 @@ let controlInfo = [
 ];
 
 let instructions = [
-  "- Good morning Captain Fort. Do not be alarmed if you feel disoriented, this is normal when coming out of cryosleep.#- I am your emergency guidance system.#- I will do my best to explain everything due to your permanent and irreparably damaged memory.#- Use the CONTROL MODULES to the left to create a PROMISE ENGINE PATH (P.E.P) that will get our satellite to the next planet on the SUBSECTOR MAP.##ENTER 'START' TO DISPLAY THE SUBSECTOR MAP#TYPE 'HELP' TO SHOW OTHER AVAILABLE COMMANDS#>",
+  "- Good morning Captain Fort. Do not be alarmed if you feel disoriented, this is normal when coming out of cryosleep.#- I am your emergency guidance system.#- I will do my best to explain everything due to your permanent and irreparably damaged memory.#- Use the CONTROL MODULES to the left to create a PROMISE ENGINE PATH (P.E.P) that will get our satellite to the next planet on the SUBSECTOR MAP.##TYPE 'START' TO DISPLAY THE SUBSECTOR MAP#TYPE 'HELP' TO SHOW OTHER AVAILABLE COMMANDS#>",
 
-  "- Congratulations on not dying alone in space yet! Now use the wormhole to travel to the next planet WITHOUT LANDING ON ANY OF THE CLOUDY SQUARES.#- Good luck!##ENTER 'START' TO DISPLAY THE SUBSECTOR MAP#TYPE 'HELP' TO SHOW OTHER AVAILABLE COMMANDS#>",
+  "- Congratulations on not dying alone in space yet! Now use the wormhole to travel to the next planet WITHOUT LANDING ON ANY OF THE CLOUDY SQUARES.#- Good luck!##TYPE 'START' TO DISPLAY THE SUBSECTOR MAP#TYPE 'HELP' TO SHOW OTHER AVAILABLE COMMANDS#>",
 
-  "- Congratulations on not dying alone in space yet! Now use the UNSTABLE wormhole to travel to the next planet WITHOUT LANDING ON ANY OF THE CLOUDY SQUARES.#- Good luck!##ENTER 'START' TO DISPLAY THE SUBSECTOR MAP#TYPE 'HELP' TO SHOW OTHER AVAILABLE COMMANDS#>",
+  "- Congratulations on not dying alone in space yet! Now use the UNSTABLE wormhole to travel to the next planet WITHOUT LANDING ON ANY OF THE CLOUDY SQUARES.#- Good luck!##TYPE 'START' TO DISPLAY THE SUBSECTOR MAP#TYPE 'HELP' TO SHOW OTHER AVAILABLE COMMANDS#>",
 
-  "- The next sector is fairly chaotic. Try to make use of the CATCH methods. FUNCTIONS in a CATCH method, like FUNCTIONS in a THEN block, will only activate if there is an uncaught ERROR in one of the previous MOVEMENT promises.##ENTER 'START' TO DISPLAY THE SUBSECTOR MAP#TYPE 'HELP' TO SHOW OTHER AVAILABLE COMMANDS#>"
+  "- The next sector is fairly chaotic. Try to make use of the CATCH methods. FUNCTIONS in a CATCH method, like FUNCTIONS in a THEN block, will only activate if there is an uncaught ERROR in one of the previous MOVEMENT promises.##TYPE 'START' TO DISPLAY THE SUBSECTOR MAP#TYPE 'HELP' TO SHOW OTHER AVAILABLE COMMANDS#>"
 ];
 
 function levelWon() {
@@ -125,7 +125,7 @@ function levelEnd() {
     levelWon();
   } else {
     gamestate = 'lost';
-    let lostText = "#- It seems you have died alone in space. But I belive I can reverse causality back to the last planet if you would like to try again.##ENTER 'START' TO REVERSE CAUSALITY#TYPE 'HELP' TO SHOW OTHER AVAILABLE COMMANDS#>";
+    let lostText = "#- It seems you have died alone in space. But I belive I can reverse causality back to the last planet if you would like to try again.##TYPE 'START' TO REVERSE CAUSALITY#TYPE 'HELP' TO SHOW OTHER AVAILABLE COMMANDS#>";
     giveInstructions(lostText);
   }
 }
