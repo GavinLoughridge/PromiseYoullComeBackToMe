@@ -97,7 +97,7 @@ let instructions = [
 function levelWon() {
   let textboxPromise = new Promise((resolve, reject) => {
     $('#textbox').empty();
-    appendToTextbox("####**************************##* CONGRATULATIONS YOU WON *##**************************", resolve);
+    appendToTextbox("####******************************##* CONGRATULATIONS YOU MADE IT *##******************************", resolve);
   });
 
   textboxPromise.then(function() {
