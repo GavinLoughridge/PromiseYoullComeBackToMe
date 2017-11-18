@@ -21,9 +21,6 @@ function setLandingPagePhoto() {
   }
   let date = year.concat('-').concat(month).concat('-').concat(day);
 
-
-  //date=${date}&
-
   var $xhr = $.getJSON(`https://api.nasa.gov/planetary/apod?api_key=8ZXHhuX7oxCjmUKVYTWXo7EmyckGB7X27dVstz8x`);
 
   $xhr.then(function(data) {

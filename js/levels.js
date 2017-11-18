@@ -50,7 +50,7 @@ const starts = [
 
 const mapSizes = [2, 3, 3, 7];
 
-let helpInfo = "##Avaialble commands:##'HELP' - display available commands##'START' - begin mission##'MISION' - get background information on your current mission##'CONTROL' - get information on relevant controls for this mission##'PEP' - get more detailed information on how the Promise Engine Path works.##>"
+let helpInfo = "##Avaialble commands:##'HELP' - display available commands##'START' - begin mission##'MISSION' - get background information on your current mission##'CONTROLS' - get information on relevant controls for this mission##'PEP' - get more detailed information on how the Promise Engine Path works.##>"
 
 let missionInfo = [
   "##We are currently orbiting a planet at the edge of the SARGASSO SECTOR. At this point I'm instructed to tell you:##CONGRATULATIONS, YOU REALLY MADE IT CHARLES! LOVE AND BEST WISHES FROM THE WHOLE TEAM!##Upon entry to the SARGASSO SECTOR we sustained heavy damage and will likely never return back to earth. At this point I'm instructed to tell you:##OH GOD, I HOPE YOU NEVER HAVE TO READ THIS CHARLES. BUT IF YOU DO, I NEED TO TELL YOU TWO [ERROR: data corrupted] IF THAT WORKS YOU SHOULD STILL BE ABLE TO MAKE IT HOME. REMEMBER, YOU PROMISED TO COME BACK TO ME.##You should try to leave the Saragossa Sector in order to not die alone in space. First you must travel to the next planet on your sector map, from there we can gather additional sensor data and find a safe path to continue on.##>",
