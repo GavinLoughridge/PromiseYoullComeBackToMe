@@ -64,7 +64,7 @@ let missionInfo = [
 ];
 
 let promiseInfo = [
-  "#- The functions in each THEN or CATCH method will only activate once the previous PROMISE has RESOLVED (i.e. has finished). The FUNCTION in the FIRST ARGUMENT SLOT of a THEN method will activate if the previous promise RESOLVED successfully (i.e. was FULFILLED, or ended in a good way).#- A FUNCTION in the SECOND ARGUMENT SLOT of a THEN method as well as any FUNCTIONs in a CATCH method will only activate if the previous promise RESOLVED unsuccessfully (i.e. was REJECTED, or ended in a bad way).#- In this SUBSECTOR all promeses are guaranteed to be FULFILLED, so FUNCTIONS in CATCH methods or in the SECOND ARGUMENT SLOT of THEN methods will NOT activate.#>",
+  "#- The functions in each THEN or CATCH method will only activate once the previous PROMISE has RESOLVED (i.e. has finished). The FUNCTION in the FIRST ARGUMENT SLOT of a THEN method will activate if the previous promise RESOLVED successfully (i.e. was FULFILLED, or ended in a good way).#- A FUNCTION in the SECOND ARGUMENT SLOT of a THEN method as well as any FUNCTION in a CATCH method will only activate if the previous promise RESOLVED unsuccessfully (i.e. was REJECTED, or ended in a bad way).#- In this SUBSECTOR all promises are guaranteed to be FULFILLED, so FUNCTIONS in CATCH methods or in the SECOND ARGUMENT SLOT of THEN methods will NOT activate.#>",
 
   "#- When you move into a wormhole, the MOVEMENT promise will not resolve until you reach the other side. Once you have reached the other side of the wormhole the next THEN or CATCH method will attempt to activate.#>",
 
