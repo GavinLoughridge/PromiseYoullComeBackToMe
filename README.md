@@ -1,70 +1,26 @@
-# TRAILER
+# Promise You'll Come Back To Me
 
+Promise You'll Come Back To Me (or Promise you'll return to me) is a game about love, loss, and complex error hendeling strategies. In it you play as Captain Charles Fort (from the album The Life, Death, And Persistence Of Captain Charles Fort by the band The Wiggly Tendrills).
+
+Having lost your memory you must attempt to navigate the mysterious Sargasso sector using you ships Promise Engine. To do this you will have to submit ship movement comands as well formatted promises.As you progress you can ask you shipboard A.I. for more information about your past, the Sargassothe sector, how to create well formatted promises, or why well formatted promeses are important (e.g. if a movement brings you into a wormhole and you accidnetally start your next movement before exiting the wormhole then you could slam into a warp wall and disintegrate).
+
+Watch a trailer for the game here:
 https://youtu.be/6VjfU8z28g8
 
-# PROJECT
+## Getting started
 
-“Promise You’ll Come Back To Me”
+If you want to try the game you can access it here: http://promiseyoullreturntome.surge.sh/
+It was designed to run in Chrome 63, so if you experience difficulties try switching or updating your browser.
 
-## TL;DR
+If you want to run the game locally just for and clone this repo and then open index.html with your browser.
 
-A “flexboxfroggy” type game to teach people how to use promises with a story taken from
-the concept album The Life, Death, And Persistence Of Captain Charles Fort by The Wiggly Tendrills.
+Good luck and try not to die in space!
 
-## ANSWERS TO PROJECT QUESTIONS
+## Why
 
-* **What problem does your project solve?**
-	its hard to learn how to use promises and online documentation is confusing
-* **Who has this problem?**
-	developers who have not used promises before but want to learn what they are
-* **How will your project solve this problem?**
-	it will provide a fun way to build and use some very simple and tangible promises
-* **What inputs does it need?**
-	keyboard and mouse actions from user, random numbers, cool space pictures
-* **What outputs does it produce?**
-	animations, success/failure notifications
-* **What web APIs will it use?**
-	random.org api for true random numbers (because why not)
-	nasa rover api for cool space pictures (again, why not)
-	other things? All the apis?
-* **What technologies will it use?**
-	css, html, javascript
-* **What additional features will it have?**
-	hopefully animations, maybe an audio console to play the source album while playing if you want.
-  Maybe it would be cool to embed a chatbot to ask some questions about promises.
+I created this game because while learning javascript development I was having a hard time understanding promises. I belive that this is partially because there are not a lot of good analogies for promises available to new developers. Most tutorials already assume you have experience with asynchronous functions and have run into situations where you would want to use promises. In addition to providing a more easily understandable analogy for asynchronous calls (unstable wormhole jumps) to new developers, making the game forced me to develop a solid understanding of promises. During development I had to build the logic of the game to match the actual logic of promises and also make sure that the analogy made sense at all times. I also wound up using a few promises myself along the way.
 
-
-## LONG DESCRIPTION
-
-You will play the roll of Charles Fort trying to navigate wormholes in the Sargossa Sector and
-return to the love of your life Ada Lovelace before she grows old and dies due to the time dilation
-of your near speed of light travel.
-
-However, Sargossa Sector wormholes are unpredictable. You may come out the other side at at
-time, and they might even collapse and spit you out somewhere else.  You need to remain in stasis
-during the jumps so you will need to program your Javascript Craft Control System to execute
-the correct jumps to get you home. This must be done asynchronously because the Javascript Craft
-Control System also controls your life support and if it gets blocked you will die. You must continue
-flying after wormhole jumps or you will stall and die. You must catch unexpected course changes and
-correct for them or you will get lost and die.
-
-### CONTROLS
-
-Users will have some scratch type building blocks that they can drag and drop to create promises
-(see attached files for example of simple drag and drop).
-
-Users will build a promise to “come home” and will use then and catch to continue or correct their
-course depending on weather each wormhole jump succeeds or fails (see attached files for how a level backend might look).
-
-Not sure how I’ll look at the order of these element and determination success or failure, but
-I’m confident I’ll figure it out.
-
-### DISPLAY
-
-Besides the drag and drop tool interface users will have a display of their position in the Sargossa Sector.
-It will show their starting position, destination, location of wormholes allow the way, and where the wormhole
-will drop then if the jump succeeds or fails.
-
-When they submit a solution I’d like this to animate and show the craft taking the users path and getting
-to the destination/flying off into the abyss/exploding/etc. But this is a stretch goal, it could also just
-have a text interface displaying what resulted from their attempt.
+## Screenshots
+<img width="1186" alt="screen shot 2018-02-04 at 10 54 24 pm" src="https://user-images.githubusercontent.com/8572233/35789031-e1ca831a-09fe-11e8-8475-c65456ef7dd3.png">
+<img width="1185" alt="screen shot 2018-02-04 at 10 55 21 pm" src="https://user-images.githubusercontent.com/8572233/35789035-e405e926-09fe-11e8-92ae-4dbed3482548.png">
+<img width="1183" alt="screen shot 2018-02-04 at 10 57 37 pm" src="https://user-images.githubusercontent.com/8572233/35789040-e6556404-09fe-11e8-8cdb-5bc91b06b67b.png">
